@@ -1,10 +1,13 @@
-//----------------------------DIV PADRE----------------
+//----------------------------DIV PADRE---------------
+
+
 let contPadre = document.getElementById("container");
 contPadre.style.width = '400px';
-contPadre.style.height = '400px';
+contPadre.style.height = '350px';
 contPadre.style.background = '#eaeaea';
 contPadre.style.display = "flex";
 contPadre.style.alignItems = "center"
+contPadre.style.textAlign = "center"
 contPadre.style.flexDirection = "column"
 contPadre.style.margin = "auto"
 
@@ -15,29 +18,25 @@ contPadre.style.margin = "auto"
 //------------------DONDE MUESTRO EL RESULTADO EL PRIMERO--------------
 let contResultado = document.createElement("div");
 contResultado.style.width = "400px"
-contResultado.style.height = "80px"
-contResultado.style.background = "red"
+contResultado.style.height = "60px"
+contResultado.style.background = "#eaeaea"
 contResultado.style.display = "flex"
 contResultado.style.justifyContent = "center"
 contResultado.style.fontSize = "2rem"
-contResultado.style.textAlign = "center"
-
-
-
+contResultado.style.paddingTop = "10px"
 
 contPadre.appendChild(contResultado)
 
 //-----------------------------------------------------------
 
 
-
 //------------------LAS CUATRO OPERACIONES SUM REST DIV MULT------------
 let nodoOperaciones = contResultado.cloneNode();
-nodoOperaciones.style.background = "black"
+nodoOperaciones.style.background = "#eaeaea"
 
 let divOperaciones = document.createElement("div");
 divOperaciones.style.width = "90px"
-divOperaciones.style.height = "60px"
+divOperaciones.style.height = "50px"
 divOperaciones.style.background = "white"
 divOperaciones.style.margin = "auto"
 divOperaciones.style.fontSize= "50px"
@@ -75,13 +74,13 @@ let divIgual = document.createElement("div")
 divIgual.style.height = "220px"
 divIgual.style.width = "100px"
 divIgual.style.display= "felx"
-divIgual.style.background = "red"
+divIgual.style.background = "#eaeaea"
 
 //-------------DIV QUE CONTIENE LOS NUMEROS
 let contNumeros = document.createElement("div")
 contNumeros.style.width = "300px" 
 contNumeros.style.height = "220px" 
-contNumeros.style.background = "green"
+contNumeros.style.background = "#eaeaea"
 contNumeros.style.display = "flex"
 contNumeros.style.flexDirection = "column"
 contNumeros.style.justifyContent = "center"
@@ -95,7 +94,7 @@ divNumeros.appendChild(contNumeros)
 divNumeros.appendChild(divIgual)
 //------------------------Div boton es igual-----------------------------------
 let igual= document.createElement("div")
-igual.style.height="150px"
+igual.style.height="190px"
 igual.style.width="75px"
 igual.style.display="flex"
 igual.style.background="white"
@@ -109,14 +108,9 @@ divIgual.appendChild(igual)
 
 //----------------DIV PARA FILA PARA 3 NUM 
 let divPara3Num = document.createElement("div")
-divPara3Num.style.height = "140px"
-divPara3Num.style.width = "250px"
+divPara3Num.style.height = "150px"
+divPara3Num.style.width = "290px"
 divPara3Num.style.display = "flex"
-
-
-
-
-
 
 contNumeros.appendChild(divPara3Num)
 
