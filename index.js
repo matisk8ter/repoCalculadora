@@ -6,6 +6,9 @@ contPadre.style.background = '#eaeaea';
 contPadre.style.display = "flex";
 contPadre.style.alignItems = "center"
 contPadre.style.flexDirection = "column"
+contPadre.style.margin = "auto"
+
+
 //-----------------------------------------------------
 
 
@@ -16,6 +19,12 @@ contResultado.style.height = "80px"
 contResultado.style.background = "red"
 contResultado.style.display = "flex"
 contResultado.style.justifyContent = "center"
+contResultado.style.fontSize = "2rem"
+contResultado.style.textAlign = "center"
+
+
+
+
 contPadre.appendChild(contResultado)
 
 //-----------------------------------------------------------
@@ -117,6 +126,8 @@ num.style.height = "40px"
 num.style.width = "250px"
 num.style.background = "white"
 num.style.margin = "5px"
+num.style.textAlign="center"
+num.style.fontSize="25px"
 
 
 
@@ -141,44 +152,26 @@ contNumeros.appendChild(divPara3NumFila4)
 //-----------CLONO EL DIV DE CADA NUM----
 let n1 = num.cloneNode();
 n1.innerHTML="1"
-n1.style.textAlign="center"
-n1.style.fontSize="25px"
 let n2 = num.cloneNode();
 n2.innerHTML="2"
-n2.style.textAlign="center"
-n2.style.fontSize="25px"
 let n3 = num.cloneNode();
 n3.innerHTML="3"
-n3.style.textAlign="center"
-n3.style.fontSize="25px"
 let n4 = num.cloneNode();
 n4.innerHTML="4"
-n4.style.textAlign="center"
-n4.style.fontSize="25px"
 let n5 = num.cloneNode();
 n5.innerHTML="5"
-n5.style.textAlign="center"
-n5.style.fontSize="25px"
 let n6 = num.cloneNode();
 n6.innerHTML="6"
-n6.style.textAlign="center"
-n6.style.fontSize="25px"
 let n7 = num.cloneNode();
 n7.innerHTML="7"
-n7.style.textAlign="center"
-n7.style.fontSize="25px"
 let n8 = num.cloneNode();
 n8.innerHTML="8"
-n8.style.textAlign="center"
-n8.style.fontSize="25px"
 let n9 = num.cloneNode();
 n9.innerHTML="9"
-n9.style.textAlign="center"
-n9.style.fontSize="25px"
 let n0 = num.cloneNode();
 n0.innerHTML="0"
-n0.style.textAlign="center"
-n0.style.fontSize="25px"
+let C = num.cloneNode();
+C.innerHTML= "C"
 
 divPara3Num.appendChild(n1)
 divPara3Num.appendChild(n2)
@@ -193,6 +186,107 @@ divPara3NumFila3.appendChild(n8)
 divPara3NumFila3.appendChild(n9)
 
 divPara3NumFila4.appendChild(n0)
+divPara3NumFila4.appendChild(C)
+
+var a
+var b
+var operacion
+
+//----------------------------Funciones-------------------------------
+document.addEventListener("DOMContentLoaded", init)
+
+function init(){
+
+    n1.onclick = function(){
+        contResultado.textContent= contResultado.textContent + "1"
+    } 
+    n2.onclick = function(){
+        contResultado.textContent= contResultado.textContent + "2"
+    } 
+    n3.onclick = function(){
+        contResultado.textContent= contResultado.textContent + "3"
+    } 
+    n4.onclick = function(){
+        contResultado.textContent= contResultado.textContent + "4"
+    } 
+    n5.onclick = function(){
+        contResultado.textContent= contResultado.textContent + "5"
+    } 
+    n6.onclick = function(){
+        contResultado.textContent= contResultado.textContent + "6"
+    } 
+    n7.onclick = function(){
+        contResultado.textContent= contResultado.textContent + "7"
+    } 
+    n8.onclick = function(){
+        contResultado.textContent= contResultado.textContent + "8"
+    } 
+    n9.onclick = function(){
+        contResultado.textContent= contResultado.textContent + "9"
+    } 
+    n0.onclick = function(){
+        contResultado.textContent= contResultado.textContent + "0"
+    } 
+    C.onclick= function(){
+        reset();
+    }
+    
+
+    opSuma.onclick = function(){
+        a= contResultado.textContent
+        operacion= "+"
+        limpiar();
+    }
+    opDivision.onclick = function(){
+        a= contResultado.textContent
+        operacion= "/"
+        limpiar();
+    }
+    opMult.onclick = function(){
+        a= contResultado.textContent
+        operacion= "*"
+        limpiar();
+    }
+    divOperaciones.onclick = function(){
+        a= contResultado.textContent
+        operacion= "-"
+        limpiar();
+    }
+    function limpiar(){
+        contResultado.textContent=""
+    }
+    igual.onclick = function(){
+        b= contResultado.textContent
+        resolver();
+    }
+    function reset(){
+        contResultado.textContent=""
+        a=0
+        b=0
+        operacion=""
+    }
+    function resolver(){
+        var res
+        switch(operacion){
+            case "+":
+                res= parseFloat(a)+parseFloat(b)
+                break;
+            case "-":
+                res= parseFloat(a)-parseFloat(b)
+                break;
+            case "*":
+                res= parseFloat(a)*parseFloat(b)
+                break;
+            case "/":
+                res= parseFloat(a)/parseFloat(b)
+                break;
+        }
+        reset();
+        contResultado.textContent= res
+
+    }
+
+}
 
 
 
